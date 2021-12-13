@@ -2,5 +2,5 @@ import 'room.dart';
 
 class FinalRoom extends Room {
   FinalRoom({String name, String description})
-      : super(name: 'Red room', description: description);
+      : super(doorColor: 'Red door', description: description, roomItems: ['flashlight']);
 }

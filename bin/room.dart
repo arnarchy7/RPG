@@ -1,11 +1,11 @@
 import 'item.dart';
 
 class Room {
-  String name;
+  String doorColor;
   String description;
   List<String> roomItems;
 
-  Room({this.name, this.description, this.roomItems});
+  Room({this.doorColor, this.description, this.roomItems});
 
   List<Room> adjacentRooms = [];
 
@@ -19,15 +19,32 @@ class Room {
   void describeRoom(){
     print(description);
     if(roomItems != null) {
-    print('Items: $roomItems');}
+    print('Items: $roomItems\n');}
+
     int option = 1;
     for (Room room in adjacentRooms){
-      print('[${option++}] ${room.name}');
+      print('[${option++}] Go through the ${room.doorColor}');
     } if(roomItems != null) {
       for (String roomItem in roomItems) {
         print('[${option++}] Pick up $roomItem');
       }
-    }
+    } print('\nEnter a number for your action:');
+
+  }
+
+  void describeFinalRoom(){
+    print(description);
+    if(roomItems != null) {
+      print('Items: $roomItems\n');}
+
+    int option = 1;
+    for (Room room in adjacentRooms){
+      print('[${option++}] Go through the ${room.doorColor}');
+    } if(roomItems != null) {
+      for (String roomItem in roomItems) {
+        print('[${option++}] Pick up $roomItem');
+      } print('[${option++}] Guess the password');
+    } print('\nEnter a number for your action:');
   }
 
   void removeFromRoom(Item item){
