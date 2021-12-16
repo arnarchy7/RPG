@@ -33,21 +33,9 @@ class GameEngine {
    else if (input == '2') {
     greenRoomEngine();
    }
- /*  else if (input == '3') {
-    if (user.inventory.contains('flashlight')) {
-     user.pickUpItem(hammer);
-     map.firstRoom.removeFromRoom(hammer);
-
-    }else{
-     user.pickUpItem(flashlight);
-     map.firstRoom.removeFromRoom(flashlight);
-
-    }
-   }*/
     else if (input == '3') {
     user.pickUpItem(hammer);
     map.firstRoom.removeFromRoom(hammer);
-
    }// cheat code for testing purposes
     else if (input == '69'){
      redRoomEngine();
@@ -69,7 +57,6 @@ class GameEngine {
    else if (input == '2') {
     user.pickUpItem(key);
     map.secondRoom.removeFromRoom(key);
-
    }
   }
  }
@@ -79,7 +66,6 @@ void greenRoomEngine(){
  while (run) {
   map.thirdRoom.describeRoom();
   String input = stdin.readLineSync();
-
 
   if (input == '1') {
    whiteRoomEngine();
@@ -93,7 +79,6 @@ void greenRoomEngine(){
     redRoomEngine();
    }else{
     print('\nThe door is locked. Maybe there is a key somewhere.');
-
    }
   }
  }
@@ -117,16 +102,15 @@ void yellowRoomEngine(){
      map.fourthRoom.removeFromRoom(clay);
      print('\nYou shake it and hear something is inside of it.\nYou take your hammer and break it.'
          '\nInside you find a note that reads:\n\n"The answer to the Ultimate Question of Life, the Universe, and Everything?"');
-
-    }else{
-     print('\nYou shake it and hear something is inside of it. Maybe you could break it with the right tool\n');
-
+    }
+    else{
+     print('\nYou shake it and hear something is inside of it. Maybe you could break it with the right tool?\n');
     }
    }
   }
  }
  else{
-  print('\nThe room is completely dark. You cant see anything.\nMaybe you can find a light source in another room\n');
+  print("\nThe room is completely dark. You can't see anything.\nMaybe you can find a light source in another room\n");
   int option = 1;
   for (Room room in map.fourthRoom.adjacentRooms){
    print('[${option++}] Go through the ${room.doorColor}');}
@@ -143,11 +127,6 @@ void redRoomEngine() {
 
   while (run) {
    map.finalRoom.describeFinalRoom();
- /*  print(map.finalRoom.description);
-   print('[1] Go through the Green door');
-   print('[2] Pick up flashlight');
-   print('[3] Guess the password');
-   print('\nEnter a number for your action:');*/
    String input = stdin.readLineSync();
 
   if (input == '1') {
@@ -164,7 +143,6 @@ void redRoomEngine() {
    guessPassword();
   }
  }
-
 }
 
 void guessPassword(){
@@ -183,7 +161,6 @@ void endEngine(){
  // Code to open video from the source below:
  // https://stackoverflow.com/questions/33027000/launching-a-web-browser-from-command-line-dart-script#:~:text=Process.run(%22start%22%2C%20%5Burl%5D%2C%20runInShell%3A%20true)%3B
  Process.run("start", ['https://www.youtube.com/watch?v=dQw4w9WgXcQ'], runInShell: true);
-
  }
 
 }
