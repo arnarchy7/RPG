@@ -1,1 +1,1 @@
-A simple command-line application.
+A simple text-based rpg. The player moves through five rooms to discover a password that he has to input into a tablet to finish the game. The tablet is in a locked room that has to be opened with a key found in one of the rooms. In the tablet room there is also a flashlight the player will have to use to go into a room that is completely dark. There he will discover a block of clay that needs to be broken with a hammer to find the hint for the password.
